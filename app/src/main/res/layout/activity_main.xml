@@ -19,4 +19,21 @@
         app:layout_constraintVertical_bias="0.173"
         app:srcCompat="@drawable/logo" />
 
+    <TextView
+        android:id="@+id/TextStdNo"
+        android:layout_width="304dp"
+        android:layout_height="99dp"
+        android:contentDescription="@string/login"
+        android:text="@string/login_label"
+        android:textAlignment="center"
+        android:textColor="#2D3C84"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.535"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.415" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
