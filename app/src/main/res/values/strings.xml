@@ -10,4 +10,9 @@
     <string name="register_text">Register</string>
     <string name="register_label">Register</string>
     <string name="send_otp_text">Send OTP</string>
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="add">Add</string>
+    <string name="notification">Notification</string>
+    <string name="profile">Profile</string>
 </resources>

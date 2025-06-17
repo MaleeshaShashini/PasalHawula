@@ -6,4 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".FindResourcesActivity">
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu"
+        app:labelVisibilityMode="labeled"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="93dp"
+        android:layout_height="24dp"
+        android:text="search"
+        tools:layout_editor_absoluteX="139dp"
+        tools:layout_editor_absoluteY="263dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
