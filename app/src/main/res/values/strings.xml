@@ -6,4 +6,8 @@
     <string name="password_label">Password</string>
     <string name="email_label">Email</string>
     <string name="login_button_text">Login</string>
+    <string name="register_button_text">Register</string>
+    <string name="register_text">Register</string>
+    <string name="register_label">Register</string>
+    <string name="send_otp_text">Send OTP</string>
 </resources>
