@@ -26,7 +26,7 @@
         android:layout_height="99dp"
         android:contentDescription="@string/login"
         android:text="@string/login_label"
-        android:textColor="#2D3C84"
+        android:textColor="@color/darkBlue"
         android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -66,15 +66,16 @@
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="339dp"
-        android:layout_height="49dp"
+        android:layout_height="51dp"
         android:text="@string/login_button_text"
         android:textSize="24sp"
+        app:backgroundTint="@color/darkBlue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintHorizontal_bias="0.569"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.932"
-        app:strokeColor="#000000" />
+        app:layout_constraintVertical_bias="0.894"
+        app:strokeColor="#000000" />/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
