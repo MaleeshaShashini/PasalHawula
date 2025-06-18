@@ -7,26 +7,190 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Welcome to Home!"
-        android:textSize="24sp"
+    <!-- The ScrollView -->
+    <ScrollView
+        android:id="@+id/mainScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent">
 
+        <!-- ConstraintLayout to all the content without navigation bar  -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:paddingBottom="16dp"> <!-- Padding at the bottom   -->
+
+            <!-- Header Section  -->
+            <TextView
+                android:id="@+id/header_section"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="[Header Section: Welcome, School Name, Logo]"
+                android:textSize="18sp"
+                android:padding="8dp"
+                android:gravity="center"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- Search Bar  -->
+            <TextView
+                android:id="@+id/search_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="[Search Bar]"
+                android:textSize="18sp"
+                android:padding="8dp"
+                android:gravity="center"
+                android:layout_marginTop="24dp"
+                app:layout_constraintTop_toBottomOf="@+id/header_section"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- Quick Actions  -->
+            <TextView
+                android:id="@+id/quick_actions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="[Quick Actions Title]"
+                android:textSize="18sp"
+                android:padding="8dp"
+                android:gravity="center"
+                android:layout_marginTop="24dp"
+                app:layout_constraintTop_toBottomOf="@+id/search_bar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/layoutQuickActions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp"
+                android:weightSum="3"
+                app:layout_constraintTop_toBottomOf="@+id/quick_actions"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+                <!-- Placeholders for 3 CardViews (List, Find, Make Request) -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_weight="1"
+                    android:background="#E0E0E0"
+                    android:gravity="center"
+                    android:text="Action 1"
+                    android:layout_marginEnd="4dp"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_weight="1"
+                    android:background="#E0E0E0"
+                    android:gravity="center"
+                    android:text="Action 2"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginEnd="2dp"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_weight="1"
+                    android:background="#E0E0E0"
+                    android:gravity="center"
+                    android:text="Action 3"
+                    android:layout_marginStart="4dp"/>
+            </LinearLayout>
+
+            <!-- Resource Categories  -->
+            <TextView
+                android:id="@+id/resource_categories_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="[Resource Categories Title]"
+                android:textSize="18sp"
+                android:padding="8dp"
+                android:gravity="center"
+                android:layout_marginTop="24dp"
+                app:layout_constraintTop_toBottomOf="@+id/layoutQuickActions"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/category_1"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#E8E8E8"
+                android:gravity="center_vertical"
+                android:text="  Category 1 Card"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/resource_categories_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+            <TextView
+                android:id="@+id/category_2"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#E8E8E8"
+                android:gravity="center_vertical"
+                android:text="  Category 2 Card"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/category_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+            <TextView
+                android:id="@+id/category_3"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#E8E8E8"
+                android:gravity="center_vertical"
+                android:text="  Category 3 Card"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/category_2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- Recent Activities  -->
+            <TextView
+                android:id="@+id/recent_activities_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="[Recent Activities Title]"
+                android:textSize="18sp"
+                android:padding="8dp"
+                android:gravity="center"
+                android:layout_marginTop="24dp"
+                app:layout_constraintTop_toBottomOf="@+id/category_3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/recent_activity_card_placeholder"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#D0D0D0"
+                android:gravity="center"
+                android:text="[Recent Activity Card]"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/recent_activities_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <!-- Bottom Navigation-->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_nav_menu"
-        app:labelVisibilityMode="labeled"/>
-
+        app:labelVisibilityMode="labeled" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
