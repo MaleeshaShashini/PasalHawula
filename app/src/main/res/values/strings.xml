@@ -33,7 +33,28 @@
     <string name="confirm_password_hint">Re-enter password</string>
     <string name="already_have_account_text">Already have an account? Login</string>
 
+    <!--Strings for Home page -->
 
+    <string name="text_welcome">Welcome back</string>
+    <string name="search_resources_hint">Search for resources</string>
+    <string name="school_college_name">St.SebastianB.M.V</string
+
+    <string name="list_resources_action">List Resources</string>
+    <string name="find_resources_action">Find Resources</string>
+    <string name="make_request_action">Make a Request</string>
+
+    <string name="resource_categories_title">Resource Categories</string>
+    <string name="request_approved_status">Request Approved</string>
+    <string name="quick_actions_title">Quick Actions</string>
+
+    <string name="physical_resources_title">Physical Resources</string>
+    <string name="digital_resources_title">Digital Resources</string>
+    <string name="human_resources_title">Human Resources</string>
+
+    <string name="items_available_format">%d items available</string>
+    <string name="time_ago_format">%s ago</string>
+
+    <string name="chemistry_lab_approved_details">Your request for "Chemistry Lab Equipment" has been approved</string>
 
 
 </resources>
