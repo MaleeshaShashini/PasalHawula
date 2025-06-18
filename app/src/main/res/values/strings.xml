@@ -19,17 +19,17 @@
     <!-- strings fr Register UI -->
 
     <string name="register_text">Register</string>
-    <string name="password_label">Password</string>
-    <string name="email_label">Email</string>
-    <string name="school_name_label">School Name</string>
+    <string name="password_label">Password<font color="#FF0000">*</font></string>
+    <string name="email_label">Email<font color="#FF0000">*</font></string>
+    <string name="school_name_label">School Name <font color="#FF0000">*</font></string>
     <string name="school_name_hint">Enter school name</string>
-    <string name="contact_person_label">Contact Person</string>
+    <string name="contact_person_label">Contact Person<font color="#FF0000">*</font></string>
     <string name="contact_person_hint">Enter contact person\'s name</string>
     <string name="email_hint">Enter email</string>
-    <string name="phone_label">Phone Number</string>
+    <string name="phone_label">Phone Number<font color="#FF0000">*</font></string>
     <string name="phone_hint">Enter phone number</string>
     <string name="password_hint">Enter password</string>
-    <string name="confirm_password_label">Confirm Password</string>
+    <string name="confirm_password_label">Confirm Password<font color="#FF0000">*</font></string>
     <string name="confirm_password_hint">Re-enter password</string>
     <string name="already_have_account_text">Already have an account? Login</string>
 

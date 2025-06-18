@@ -10,18 +10,19 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="16dp">
+        android:paddingBottom="16dp"
+        android:layout_marginStart="30dp">
 
         <ImageView
             android:id="@+id/imgLogo"
             android:layout_width="227.15dp"
             android:layout_height="178dp"
             android:contentDescription="@string/pasalhawula_logo_description"
-            app:layout_constraintBottom_toTopOf="@+id/txtRegister"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintVertical_bias="0.124"
             app:srcCompat="@drawable/logo" />
 
 
@@ -56,7 +57,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/school_name_hint"
             android:textColor="@color/black"
-            android:textColorHint="@color/black"
+            android:textColorHint="@color/gray"
             android:padding="12dp"
             android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="@+id/editPasswordConfirm"
@@ -82,7 +83,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/contact_person_hint"
             android:textColor="@color/black"
-            android:textColorHint="@color/black"
+            android:textColorHint="@color/gray"
             android:padding="12dp"
             android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="@+id/editPasswordConfirm"
@@ -109,7 +110,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/email_hint"
             android:textColor="@color/black"
-            android:textColorHint="@color/black"
+            android:textColorHint="@color/gray"
             android:inputType="textEmailAddress"
             android:padding="12dp"
             android:layout_marginTop="8dp"
@@ -136,7 +137,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/phone_hint"
             android:textColor="@color/black"
-            android:textColorHint="@color/black"
+            android:textColorHint="@color/gray"
             android:inputType="phone"
             android:padding="12dp"
             android:layout_marginTop="8dp"
@@ -165,7 +166,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/password_hint"
             android:textColor="@color/black"
-            android:textColorHint="@color/black"
+            android:textColorHint="@color/gray"
             android:inputType="textPassword"
             android:padding="12dp"
             android:layout_marginTop="8dp"
@@ -192,7 +193,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/confirm_password_hint"
             android:textColor="@color/black"
-            android:textColorHint="@color/black"
+            android:textColorHint="@color/gray"
             android:inputType="textPassword"
             android:padding="12dp"
             android:layout_marginTop="8dp"
@@ -203,34 +204,37 @@
             android:layout_marginEnd="32dp" />
 
         <!-- Register Button -->
+
+        <!-- If Already Have Account then Login  -->
         <Button
             android:id="@+id/btnRegister"
             android:layout_width="339dp"
             android:layout_height="51dp"
+            android:layout_marginTop="32dp"
             android:text="@string/register_text"
             android:textSize="24sp"
-            android:layout_marginTop="32dp"
+            app:backgroundTint="@color/darkBlue"
+            app:layout_constraintBottom_toTopOf="@+id/txtAlreadyHaveAccount"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editPasswordConfirm"
-            app:layout_constraintBottom_toTopOf="@+id/txtAlreadyHaveAccount"
-            app:backgroundTint="@color/darkBlue"
             app:strokeColor="#000000" />
 
-        <!-- If Already Have Account then Login  -->
         <TextView
             android:id="@+id/txtAlreadyHaveAccount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
             android:text="@string/already_have_account_text"
             android:textColor="@color/black"
             android:textSize="16sp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.369"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnRegister"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/btnRegister" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
