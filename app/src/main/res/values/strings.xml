@@ -25,10 +25,10 @@
     <string name="school_name_hint">Enter school name</string>
     <string name="contact_person_label">Contact Person<font color="#FF0000">*</font></string>
     <string name="contact_person_hint">Enter contact person\'s name</string>
-    <string name="email_hint">Enter email</string>
+    <string name="email_hint">e.g., school@email.com</string>
     <string name="phone_label">Phone Number<font color="#FF0000">*</font></string>
-    <string name="phone_hint">Enter phone number</string>
-    <string name="password_hint">Enter password</string>
+    <string name="phone_hint">e.g., 071-XXXXXXX</string>
+    <string name="password_hint">Create password</string>
     <string name="confirm_password_label">Confirm Password<font color="#FF0000">*</font></string>
     <string name="confirm_password_hint">Re-enter password</string>
     <string name="already_have_account_text">Already have an account? Login</string>
