@@ -37,7 +37,7 @@
 
     <string name="text_welcome">Welcome back</string>
     <string name="search_resources_hint">Search for resources</string>
-    <string name="school_college_name">St.SebastianB.M.V</string
+    <string name="school_college_name">St.Sebastian B.M.V - Kandana</string>
 
     <string name="list_resources_action">List Resources</string>
     <string name="find_resources_action">Find Resources</string>
@@ -45,7 +45,8 @@
 
     <string name="resource_categories_title">Resource Categories</string>
     <string name="request_approved_status">Request Approved</string>
-    <string name="quick_actions_title">Quick Actions</string>
+    <string name="recent_activities_title">Recent Activities</string>
+    <string name="quick_actions_title">Quick Action</string>
 
     <string name="physical_resources_title">Physical Resources</string>
     <string name="digital_resources_title">Digital Resources</string>

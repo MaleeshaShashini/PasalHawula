@@ -27,42 +27,73 @@
 
             <!-- Header Section  -->
             <TextView
-                android:id="@+id/header_section"
-                android:layout_width="match_parent"
+                android:id="@+id/txtWelcome"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="[Header Section: Welcome, School Name, Logo]"
-                android:textSize="18sp"
-                android:padding="8dp"
-                android:gravity="center"
-                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="8dp"
+                android:text="@string/text_welcome"
+                android:textSize="24sp"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toStartOf="@+id/imgSchoolLogo"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <!-- Search Bar  -->
             <TextView
-                android:id="@+id/search_bar"
+                android:id="@+id/txtSchoolName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/school_college_name"
+                android:textSize="18sp"
+                android:textColor="@android:color/darker_gray"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/imgSchoolLogo"
+                app:layout_constraintTop_toBottomOf="@+id/txtWelcome" />
+
+            <ImageView
+                android:id="@+id/imgSchoolLogo"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/logo"
+                android:contentDescription="@string/pasalhawula_logo_description"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/txtWelcome"
+                app:layout_constraintBottom_toBottomOf="@+id/txtSchoolName" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputSearch"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="[Search Bar]"
-                android:textSize="18sp"
-                android:padding="8dp"
-                android:gravity="center"
                 android:layout_marginTop="24dp"
-                app:layout_constraintTop_toBottomOf="@+id/header_section"
+                app:hintEnabled="true"
+                android:hint="@string/search_resources_hint"
+                app:cornerRadius="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/txtSchoolName"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:minHeight="48dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <!-- Search Bar  -->
+
+
 
             <!-- Quick Actions  -->
             <TextView
-                android:id="@+id/quick_actions"
+                android:id="@+id/txtQuickActions"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="[Quick Actions Title]"
+                android:text="@string/quick_actions_title"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 android:padding="8dp"
-                android:gravity="center"
                 android:layout_marginTop="24dp"
-                app:layout_constraintTop_toBottomOf="@+id/search_bar"
+                app:layout_constraintTop_toBottomOf="@+id/inputSearch"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
@@ -73,112 +104,395 @@
                 android:orientation="horizontal"
                 android:layout_marginTop="16dp"
                 android:weightSum="3"
-                app:layout_constraintTop_toBottomOf="@+id/quick_actions"
+                app:layout_constraintTop_toBottomOf="@+id/txtQuickActions"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent">
-                <!-- Placeholders for 3 CardViews (List, Find, Make Request) -->
-                <TextView
+
+                <!--List, Find, Make Request -->
+                <!-- Quick Action: List Resources -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardListResources"
                     android:layout_width="0dp"
-                    android:layout_height="80dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#E0E0E0"
-                    android:gravity="center"
-                    android:text="Action 1"
-                    android:layout_marginEnd="4dp"/>
-                <TextView
+                    android:layout_marginEnd="8dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="2dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="16dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:background="?attr/selectableItemBackground">
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_find_resources"
+                            android:contentDescription="@string/list_resources_action" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/list_resources_action"
+                            android:textSize="14sp"
+                            android:textAlignment="center"
+                            android:layout_marginTop="4dp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Quick Action: Find Resources -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardFindResources"
                     android:layout_width="0dp"
-                    android:layout_height="80dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#E0E0E0"
-                    android:gravity="center"
-                    android:text="Action 2"
-                    android:layout_marginStart="2dp"
-                    android:layout_marginEnd="2dp"/>
-                <TextView
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="2dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="16dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:background="?attr/selectableItemBackground">
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/search"
+                            android:contentDescription="@string/find_resources_action" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/find_resources_action"
+                            android:textSize="14sp"
+                            android:textAlignment="center"
+                            android:layout_marginTop="4dp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Quick Action: Make a Request -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardMakeRequest"
                     android:layout_width="0dp"
-                    android:layout_height="80dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#E0E0E0"
-                    android:gravity="center"
-                    android:text="Action 3"
-                    android:layout_marginStart="4dp"/>
-            </LinearLayout>
+                    android:layout_marginStart="8dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="2dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="16dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:background="?attr/selectableItemBackground">
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_make_request"
+                            android:contentDescription="@string/make_request_action" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/make_request_action"
+                            android:textSize="14sp"
+                            android:textAlignment="center"
+                            android:layout_marginTop="4dp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
 
             <!-- Resource Categories  -->
             <TextView
-                android:id="@+id/resource_categories_title"
+                android:id="@+id/txtResourceCategories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/resource_categories_title"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutQuickActions" />
+
+
+
+            <!--Physical Resources -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardPhysicalResources"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="[Resource Categories Title]"
-                android:textSize="18sp"
-                android:padding="8dp"
-                android:gravity="center"
-                android:layout_marginTop="24dp"
-                app:layout_constraintTop_toBottomOf="@+id/layoutQuickActions"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
-
-            <TextView
-                android:id="@+id/category_1"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:background="#E8E8E8"
-                android:gravity="center_vertical"
-                android:text="  Category 1 Card"
                 android:layout_marginTop="16dp"
-                app:layout_constraintTop_toBottomOf="@+id/resource_categories_title"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp"
+                app:layout_constraintTop_toBottomOf="@+id/txtResourceCategories"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
-            <TextView
-                android:id="@+id/category_2"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:background="#E8E8E8"
-                android:gravity="center_vertical"
-                android:text="  Category 2 Card"
-                android:layout_marginTop="8dp"
-                app:layout_constraintTop_toBottomOf="@+id/category_1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
-            <TextView
-                android:id="@+id/category_3"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:background="#E8E8E8"
-                android:gravity="center_vertical"
-                android:text="  Category 3 Card"
-                android:layout_marginTop="8dp"
-                app:layout_constraintTop_toBottomOf="@+id/category_2"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground">
 
-            <!-- Recent Activities  -->
-            <TextView
-                android:id="@+id/recent_activities_title"
+                    <ImageView
+                        android:id="@+id/imgIconPhysical"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_physical_resources"
+                        android:contentDescription="Physical Resources Icon"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                    <TextView
+                        android:id="@+id/txtPhysicalTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/physical_resources_title"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="16dp"
+                        app:layout_constraintStart_toEndOf="@+id/imgIconPhysical"
+                        app:layout_constraintTop_toTopOf="@+id/imgIconPhysical" />
+
+                    <TextView
+                        android:id="@+id/txtPhysicalCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/items_available_format"
+                        android:textSize="14sp"
+                        android:textColor="@android:color/darker_gray"
+                        android:layout_marginStart="16dp"
+                        app:layout_constraintStart_toEndOf="@+id/imgIconPhysical"
+                        app:layout_constraintTop_toBottomOf="@+id/txtPhysicalTitle" />
+
+                    <ImageView
+                        android:id="@+id/imgArrowRightPhysical"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_arrow_right"
+                        android:contentDescription="Go to Physical Resources"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Digital Resources -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardDigitalResources"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="[Recent Activities Title]"
-                android:textSize="18sp"
-                android:padding="8dp"
-                android:gravity="center"
-                android:layout_marginTop="24dp"
-                app:layout_constraintTop_toBottomOf="@+id/category_3"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp"
+                app:layout_constraintTop_toBottomOf="@+id/cardPhysicalResources"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground">
 
-            <TextView
-                android:id="@+id/recent_activity_card_placeholder"
+                    <ImageView
+                        android:id="@+id/imgIconDigital"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_digital_resources"
+                        android:contentDescription="Digital Resources Icon"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                    <TextView
+                        android:id="@+id/txtDigitalTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/digital_resources_title"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="16dp"
+                        app:layout_constraintStart_toEndOf="@+id/imgIconDigital"
+                        app:layout_constraintTop_toTopOf="@+id/imgIconDigital" />
+
+                    <TextView
+                        android:id="@+id/txtDigitalCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/items_available_format"
+                        android:textSize="14sp"
+                        android:textColor="@android:color/darker_gray"
+                        android:layout_marginStart="16dp"
+                        app:layout_constraintStart_toEndOf="@+id/imgIconDigital"
+                        app:layout_constraintTop_toBottomOf="@+id/txtDigitalTitle" />
+
+                    <ImageView
+                        android:id="@+id/imgArrowRightDigital"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_arrow_right"
+                        android:contentDescription="Go to Digital Resources"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Human Resources -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardHumanResources"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:background="#D0D0D0"
-                android:gravity="center"
-                android:text="[Recent Activity Card]"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp"
+                app:layout_constraintTop_toBottomOf="@+id/cardDigitalResources"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground">
+
+                    <ImageView
+                        android:id="@+id/imgIconHuman"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/user"
+                        android:contentDescription="Human Resources Icon"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                    <TextView
+                        android:id="@+id/txtHumanTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/human_resources_title"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="16dp"
+                        app:layout_constraintStart_toEndOf="@+id/imgIconHuman"
+                        app:layout_constraintTop_toTopOf="@+id/imgIconHuman" />
+
+                    <TextView
+                        android:id="@+id/txtHumanCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/items_available_format"
+                        android:textSize="14sp"
+                        android:textColor="@android:color/darker_gray"
+                        android:layout_marginStart="16dp"
+                        app:layout_constraintStart_toEndOf="@+id/imgIconHuman"
+                        app:layout_constraintTop_toBottomOf="@+id/txtHumanTitle" />
+
+                    <ImageView
+                        android:id="@+id/imgArrowRightHuman"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_arrow_right"
+                        android:contentDescription="Go to Human Resources"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Recent Activities Section -->
+            <TextView
+                android:id="@+id/txtRecentActivities"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/recent_activities_title"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardHumanResources" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardRecentActivity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                app:layout_constraintTop_toBottomOf="@+id/recent_activities_title"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp"
+                app:layout_constraintTop_toBottomOf="@+id/txtRecentActivities"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="16dp">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground">
 
+                    <ImageView
+                        android:id="@+id/imgIconCheck"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_check_circle"
+                        android:contentDescription="Approved Status Icon"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/txtActivityTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/request_approved_status"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintStart_toEndOf="@+id/imgIconCheck"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/imgIconCheck" />
+
+                    <TextView
+                        android:id="@+id/txtActivityDetails"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/chemistry_lab_approved_details"
+                        android:textSize="14sp"
+                        android:textColor="@android:color/darker_gray"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="4dp"
+                        app:layout_constraintStart_toEndOf="@+id/imgIconCheck"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtActivityTitle" />
+
+                    <TextView
+                        android:id="@+id/txtActivityTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2 hours ago"
+                        android:textSize="12sp"
+                        android:textColor="@android:color/darker_gray"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintStart_toStartOf="@+id/txtActivityDetails"
+                        app:layout_constraintTop_toBottomOf="@+id/txtActivityDetails" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
