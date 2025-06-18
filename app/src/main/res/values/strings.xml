@@ -1,18 +1,15 @@
 <resources>
     <string name="app_name">PasalHawula</string>
     <string name="pasalhawula_logo_description">PasalHawula Logo</string>
-    <string name="login_label">Login</string>
     <string name="login">Login </string>
     <string name="password_label">Password</string>
     <string name="email_label">Email</string>
-    <string name="login_button_text">Login</string>
-    <string name="register_button_text">Register</string>
     <string name="register_text">Register</string>
-    <string name="register_label">Register</string>
     <string name="send_otp_text">Send OTP</string>
     <string name="home">Home</string>
     <string name="search">Search</string>
     <string name="add">Add</string>
     <string name="notification">Notification</string>
     <string name="profile">Profile</string>
+    <string name="splashscreen_description">A  school resource sharing app</string>
 </resources>

@@ -15,8 +15,38 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.124"
+        app:layout_constraintVertical_bias="0.276"
         app:srcCompat="@drawable/logo" />
 
+    <TextView
+        android:id="@+id/txtSplashscreenDescription"
+        android:layout_width="315dp"
+        android:layout_height="44dp"
+        android:contentDescription="@string/splashscreen_description"
+        android:text="@string/splashscreen_description"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.541"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.57" />
+
+    <TextView
+        android:id="@+id/txtSplashscreen"
+        android:layout_width="307dp"
+        android:layout_height="61dp"
+        android:contentDescription="@string/app_name"
+        android:text="@string/app_name"
+        android:textAlignment="center"
+        android:textColor="@color/darkBlue"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.494" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

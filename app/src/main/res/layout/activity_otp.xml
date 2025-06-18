@@ -10,7 +10,7 @@
         android:id="@+id/btnLogin"
         android:layout_width="339dp"
         android:layout_height="51dp"
-        android:text="@string/login_button_text"
+        android:text="@string/login"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
