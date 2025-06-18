@@ -1,80 +1,236 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context=".RegisterActivity">
 
-    <ImageView
-        android:id="@+id/imgLogo"
-        android:layout_width="227.15dp"
-        android:layout_height="178dp"
-        android:contentDescription="@string/pasalhawula_logo_description"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.124"
-        app:srcCompat="@drawable/logo" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp">
+
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="227.15dp"
+            android:layout_height="178dp"
+            android:contentDescription="@string/pasalhawula_logo_description"
+            app:layout_constraintBottom_toTopOf="@+id/txtRegister"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:srcCompat="@drawable/logo" />
 
 
-    <TextView
-        android:id="@+id/txtRegister"
-        android:layout_width="304dp"
-        android:layout_height="99dp"
-        android:contentDescription="@string/register_text"
-        android:text="@string/register_text"
-        android:textColor="@color/darkBlue"
-        android:textSize="48sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.408" />
+        <TextView
+            android:id="@+id/txtRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/register_text"
+            android:textColor="@color/darkBlue"
+            android:textSize="48sp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgLogo"
+            app:layout_constraintBottom_toTopOf="@+id/txtSchoolNameLabel" />
 
-    <TextView
-        android:id="@+id/txtEmail"
-        android:layout_width="51dp"
-        android:layout_height="19dp"
-        android:text="@string/email_label"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.113"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.501" />
+        <!-- School Name Section -->
+        <TextView
+            android:id="@+id/txtSchoolNameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/school_name_label"
+            android:textSize="16sp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="@+id/txtEmail"
+            app:layout_constraintTop_toBottomOf="@+id/txtRegister"
+            app:layout_constraintBottom_toTopOf="@+id/editSchoolName" />
 
-    <TextView
-        android:id="@+id/txtPassword"
-        android:layout_width="121dp"
-        android:layout_height="27dp"
-        android:fontFamily="@font/roboto"
-        android:text="@string/password_label"
-        android:textSize="16sp"
-        android:textStyle="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.11"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.661" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editSchoolName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/school_name_hint"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:padding="12dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/editPasswordConfirm"
+            app:layout_constraintStart_toStartOf="@+id/txtEmail"
+            app:layout_constraintTop_toBottomOf="@+id/txtSchoolNameLabel"
+            app:layout_constraintBottom_toTopOf="@+id/txtContactPersonLabel" />
 
-    <Button
-        android:id="@+id/btnRegister"
-        android:layout_width="339dp"
-        android:layout_height="51dp"
-        android:text="@string/register_text"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.932"
-        app:strokeColor="#000000"
-        app:backgroundTint="@color/darkBlue" />
+        <!-- Contact Person Section -->
+        <TextView
+            android:id="@+id/txtContactPersonLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/contact_person_label"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="@+id/txtEmail"
+            app:layout_constraintTop_toBottomOf="@+id/editSchoolName"
+            app:layout_constraintBottom_toTopOf="@+id/editContactPerson" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editContactPerson"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/contact_person_hint"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:padding="12dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/editPasswordConfirm"
+            app:layout_constraintStart_toStartOf="@+id/txtEmail"
+            app:layout_constraintTop_toBottomOf="@+id/txtContactPersonLabel"
+            app:layout_constraintBottom_toTopOf="@+id/txtEmail" />
+
+        <!-- Email Section -->
+        <TextView
+            android:id="@+id/txtEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/email_label"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editContactPerson"
+            app:layout_constraintBottom_toTopOf="@+id/editEmail" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editEmail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/email_hint"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:inputType="textEmailAddress"
+            android:padding="12dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/editPasswordConfirm"
+            app:layout_constraintStart_toStartOf="@+id/txtEmail"
+            app:layout_constraintTop_toBottomOf="@+id/txtEmail"
+            app:layout_constraintBottom_toTopOf="@+id/txtPhoneLabel" />
+
+        <!-- Phone Section -->
+        <TextView
+            android:id="@+id/txtPhoneLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/phone_label"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="@+id/txtEmail"
+            app:layout_constraintTop_toBottomOf="@+id/editEmail"
+            app:layout_constraintBottom_toTopOf="@+id/editPhone" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editPhone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/phone_hint"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:inputType="phone"
+            android:padding="12dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/editPasswordConfirm"
+            app:layout_constraintStart_toStartOf="@+id/txtEmail"
+            app:layout_constraintTop_toBottomOf="@+id/txtPhoneLabel"
+            app:layout_constraintBottom_toTopOf="@+id/txtPassword" />
+
+        <!-- Password Section -->
+        <TextView
+            android:id="@+id/txtPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="@string/password_label"
+            android:textSize="16sp"
+            android:textStyle="normal"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="@+id/txtEmail"
+            app:layout_constraintTop_toBottomOf="@+id/editPhone"
+            app:layout_constraintBottom_toTopOf="@+id/editPassword" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editPassword"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/password_hint"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:inputType="textPassword"
+            android:padding="12dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/editPasswordConfirm"
+            app:layout_constraintStart_toStartOf="@+id/txtEmail"
+            app:layout_constraintTop_toBottomOf="@+id/txtPassword"
+            app:layout_constraintBottom_toTopOf="@+id/txtPasswordConfirmLabel" />
+
+        <!-- Confirm Password Section -->
+        <TextView
+            android:id="@+id/txtPasswordConfirmLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/confirm_password_label"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="@+id/txtEmail"
+            app:layout_constraintTop_toBottomOf="@+id/editPassword"
+            app:layout_constraintBottom_toTopOf="@+id/editPasswordConfirm" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editPasswordConfirm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/confirm_password_hint"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:inputType="textPassword"
+            android:padding="12dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/txtEmail"
+            app:layout_constraintTop_toBottomOf="@+id/txtPasswordConfirmLabel"
+            app:layout_constraintBottom_toTopOf="@+id/btnRegister"
+            android:layout_marginEnd="32dp" />
+
+        <!-- Register Button -->
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="339dp"
+            android:layout_height="51dp"
+            android:text="@string/register_text"
+            android:textSize="24sp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editPasswordConfirm"
+            app:layout_constraintBottom_toTopOf="@+id/txtAlreadyHaveAccount"
+            app:backgroundTint="@color/darkBlue"
+            app:strokeColor="#000000" />
+
+        <!-- If Already Have Account then Login  -->
+        <TextView
+            android:id="@+id/txtAlreadyHaveAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/already_have_account_text"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnRegister"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
