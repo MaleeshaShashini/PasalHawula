@@ -17,6 +17,6 @@ public class SplashScreenActivity extends AppCompatActivity {
             Intent intent = new Intent(SplashScreenActivity.this, RegisterActivity.class);
             startActivity(intent);
             finish(); // Prevent returning to splash
-        }, 3000); //3 seconds
+        }, 2000); //2 seconds
     }
 }

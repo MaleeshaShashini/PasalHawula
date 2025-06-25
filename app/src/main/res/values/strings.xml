@@ -57,5 +57,11 @@
 
     <string name="chemistry_lab_approved_details">Your request for "Chemistry Lab Equipment" has been approved</string>
 
+    <string name="view_request">View Requests</string>
+    <!--Strings for notification -->
+
+    <string name="back_button_description">Back</string>
+    <string name="notification_title">Notification</string>
+
 
 </resources>

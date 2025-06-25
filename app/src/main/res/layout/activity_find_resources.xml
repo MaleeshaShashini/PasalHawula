@@ -17,12 +17,4 @@
         app:menu="@menu/bottom_nav_menu"
         app:labelVisibilityMode="labeled"/>
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="93dp"
-        android:layout_height="24dp"
-        android:text="search"
-        tools:layout_editor_absoluteX="139dp"
-        tools:layout_editor_absoluteY="263dp" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
