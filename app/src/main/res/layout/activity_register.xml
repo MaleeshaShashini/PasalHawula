@@ -10,8 +10,10 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="16dp"
-        android:layout_marginStart="30dp">
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp">
 
         <ImageView
             android:id="@+id/imgLogo"
@@ -23,6 +25,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.124"
+            android:layout_marginTop="20dp"
             app:srcCompat="@drawable/logo" />
 
 
@@ -33,11 +36,11 @@
             android:text="@string/register_text"
             android:textColor="@color/darkBlue"
             android:textSize="48sp"
+            android:textStyle="bold"
             android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imgLogo"
-            app:layout_constraintBottom_toTopOf="@+id/txtSchoolNameLabel" />
+            app:layout_constraintTop_toBottomOf="@+id/imgLogo"/>
 
         <!-- School Name Section -->
         <TextView
@@ -46,25 +49,32 @@
             android:layout_height="wrap_content"
             android:text="@string/school_name_label"
             android:textSize="16sp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="32dp"
             android:textColor="@color/black"
-            app:layout_constraintStart_toStartOf="@+id/txtEmail"
-            app:layout_constraintTop_toBottomOf="@+id/txtRegister"
-            app:layout_constraintBottom_toTopOf="@+id/editSchoolName" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtRegister" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editSchoolName"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputLayoutSchoolName"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="@string/school_name_hint"
-            android:textColor="@color/black"
-            android:textColorHint="@color/gray"
-            android:padding="12dp"
             android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="@+id/editPasswordConfirm"
-            app:layout_constraintStart_toStartOf="@+id/txtEmail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtSchoolNameLabel"
-            app:layout_constraintBottom_toTopOf="@+id/txtContactPersonLabel" />
+            app:cornerRadius="12dp"
+            android:hint="@string/school_name_hint">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editSchoolName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray"
+                android:inputType="textCapWords" />
+        </com.google.android.material.textfield.TextInputLayout>
+
 
         <!-- Contact Person Section -->
         <TextView
@@ -75,23 +85,30 @@
             android:textSize="16sp"
             android:layout_marginTop="16dp"
             android:textColor="@color/black"
-            app:layout_constraintStart_toStartOf="@+id/txtEmail"
-            app:layout_constraintTop_toBottomOf="@+id/editSchoolName"
-            app:layout_constraintBottom_toTopOf="@+id/editContactPerson" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inputLayoutSchoolName" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editContactPerson"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputLayoutContactPerson"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="@string/contact_person_hint"
-            android:textColor="@color/black"
-            android:textColorHint="@color/gray"
-            android:padding="12dp"
             android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="@+id/editPasswordConfirm"
-            app:layout_constraintStart_toStartOf="@+id/txtEmail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtContactPersonLabel"
-            app:layout_constraintBottom_toTopOf="@+id/txtEmail" />
+            app:cornerRadius="12dp"
+            android:hint="@string/contact_person_hint">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editContactPerson"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray"
+                android:inputType="textPersonName" />
+        </com.google.android.material.textfield.TextInputLayout>
+
 
         <!-- Email Section -->
         <TextView
@@ -102,25 +119,31 @@
             android:textSize="16sp"
             android:layout_marginTop="16dp"
             android:textColor="@color/black"
-            app:layout_constraintHorizontal_bias="0.1"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editContactPerson"
-            app:layout_constraintBottom_toTopOf="@+id/editEmail" />
+            app:layout_constraintTop_toBottomOf="@+id/inputLayoutContactPerson" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editEmail"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputLayoutEmail"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="@string/email_hint"
-            android:textColor="@color/black"
-            android:textColorHint="@color/gray"
-            android:inputType="textEmailAddress"
-            android:padding="12dp"
             android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="@+id/editPasswordConfirm"
-            app:layout_constraintStart_toStartOf="@+id/txtEmail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtEmail"
-            app:layout_constraintBottom_toTopOf="@+id/txtPhoneLabel" />
+            app:startIconContentDescription="@string/email_hint"
+            app:cornerRadius="12dp"
+            android:hint="@string/email_hint">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray"
+                android:inputType="textEmailAddress" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Phone Section -->
         <TextView
@@ -131,24 +154,32 @@
             android:textSize="16sp"
             android:layout_marginTop="16dp"
             android:textColor="@color/black"
-            app:layout_constraintStart_toStartOf="@+id/txtEmail"
-            app:layout_constraintTop_toBottomOf="@+id/editEmail"
-            app:layout_constraintBottom_toTopOf="@+id/editPhone" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inputLayoutEmail"/>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editPhone"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputLayoutPhone"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="@string/phone_hint"
-            android:textColor="@color/black"
-            android:textColorHint="@color/gray"
-            android:inputType="phone"
-            android:padding="12dp"
             android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="@+id/editPasswordConfirm"
-            app:layout_constraintStart_toStartOf="@+id/txtEmail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtPhoneLabel"
-            app:layout_constraintBottom_toTopOf="@+id/txtPassword" />
+            app:startIconContentDescription="@string/phone_hint"
+            app:cornerRadius="12dp"
+            android:hint="@string/phone_hint">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray"
+                android:inputType="phone" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
 
         <!-- Password Section -->
         <TextView
@@ -161,24 +192,33 @@
             android:textStyle="normal"
             android:textColor="@color/black"
             android:layout_marginTop="16dp"
-            app:layout_constraintStart_toStartOf="@+id/txtEmail"
-            app:layout_constraintTop_toBottomOf="@+id/editPhone"
-            app:layout_constraintBottom_toTopOf="@+id/editPassword" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inputLayoutPhone"/>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editPassword"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputLayoutPassword"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="@string/password_hint"
-            android:textColor="@color/black"
-            android:textColorHint="@color/gray"
-            android:inputType="textPassword"
-            android:padding="12dp"
             android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="@+id/editPasswordConfirm"
-            app:layout_constraintStart_toStartOf="@+id/txtEmail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtPassword"
-            app:layout_constraintBottom_toTopOf="@+id/txtPasswordConfirmLabel" />
+            app:startIconContentDescription="@string/password_hint"
+            app:endIconMode="password_toggle"
+            app:cornerRadius="12dp"
+            android:hint="@string/password_hint">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray"
+                android:inputType="textPassword" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
 
         <!-- Confirm Password Section -->
         <TextView
@@ -189,43 +229,49 @@
             android:textSize="16sp"
             android:layout_marginTop="16dp"
             android:textColor="@color/black"
-            app:layout_constraintStart_toStartOf="@+id/txtEmail"
-            app:layout_constraintTop_toBottomOf="@+id/editPassword"
-            app:layout_constraintBottom_toTopOf="@+id/editPasswordConfirm" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inputLayoutPassword" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editPasswordConfirm"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputLayoutPasswordConfirm"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="@string/confirm_password_hint"
-            android:textColor="@color/black"
-            android:textColorHint="@color/gray"
-            android:inputType="textPassword"
-            android:padding="12dp"
             android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/txtEmail"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtPasswordConfirmLabel"
-            app:layout_constraintBottom_toTopOf="@+id/btnRegister"
-            android:layout_marginEnd="32dp" />
+            app:startIconContentDescription="@string/confirm_password_hint"
+            app:endIconMode="password_toggle"
+            app:cornerRadius="12dp"
+            android:hint="@string/confirm_password_hint">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editPasswordConfirm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray"
+                android:inputType="textPassword" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
 
         <!-- Register Button -->
 
         <!-- If Already Have Account then Login  -->
         <Button
             android:id="@+id/btnRegister"
-            android:layout_width="339dp"
-            android:layout_height="51dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:text="@string/register_text"
             android:textSize="24sp"
             app:backgroundTint="@color/darkBlue"
-            app:layout_constraintBottom_toTopOf="@+id/txtAlreadyHaveAccount"
+            app:cornerRadius="12dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editPasswordConfirm"
-            app:strokeColor="#000000" />
+            app:layout_constraintTop_toBottomOf="@+id/inputLayoutPasswordConfirm"/>
 
         <TextView
             android:id="@+id/txtAlreadyHaveAccount"
@@ -238,7 +284,6 @@
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.369"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnRegister" />
 
