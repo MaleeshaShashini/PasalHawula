@@ -8,16 +8,21 @@ import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import android.content.SharedPreferences;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 public class ProfileActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
-
+    private Button btnLogout; // Declare the Button variable
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile); // Set the layout for Profile Activity
 
+        btnLogout = findViewById(R.id.btnLogout);
         bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         // Set User Icon as selected when in Profile Activity
@@ -60,5 +65,31 @@ public class ProfileActivity extends AppCompatActivity {
                 return false;
             }
         });
+        // Set OnClickListener for the Log Out Button
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                performLogout();
+            }
+        });
+    }
+
+    private void performLogout() {
+        // Clear user session data
+        SharedPreferences sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.clear(); // Clears all data in this SharedPreferences file for "user_prefs"
+
+        editor.apply(); // Use apply() for asynchronous save
+
+        Toast.makeText(this, "Logged out successfully!", Toast.LENGTH_SHORT).show(); //  Show a toast message (optional)
+
+        Intent intent = new Intent(ProfileActivity.this, MainActivity.class);// Navigate to the Login/Main Activity
+
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+        startActivity(intent);
+
+        finish();// Finish the current activity (ProfileActivity)
     }
 }

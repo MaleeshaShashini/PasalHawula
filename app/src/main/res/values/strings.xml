@@ -64,5 +64,7 @@
     <string name="back_button_description">Back</string>
     <string name="notification_title">Notification</string>
 
+    <!--Strings for profile -->
+    <string name="logout">Log Out</string>
 
 </resources>
