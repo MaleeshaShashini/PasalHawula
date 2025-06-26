@@ -14,4 +14,6 @@
 
     <color name="text_on_light_background">#1A1A1A</color>
     <color name="hint_on_light_background">#616161</color>
+
+    <color name="ic_launcher_background">#FFFFFF</color>
 </resources>

@@ -18,7 +18,7 @@
 
     <!-- strings fr Register UI -->
 
-    <string name="register_text">Register</string>
+    <string name="register_text">Sign Up</string>
     <string name="password_label">Password<font color="#FF0000">*</font></string>
     <string name="email_label">Email<font color="#FF0000">*</font></string>
     <string name="school_name_label">School Name <font color="#FF0000">*</font></string>
@@ -31,7 +31,8 @@
     <string name="password_hint">Create password</string>
     <string name="confirm_password_label">Confirm Password<font color="#FF0000">*</font></string>
     <string name="confirm_password_hint">Re-enter password</string>
-    <string name="already_have_account_text">Already have an account? Login</string>
+    <string name="already_have_account">Already have an account? </string>
+    <string name="already_have_account_login">Login</string>
 
     <!--Strings for Home page -->
 
