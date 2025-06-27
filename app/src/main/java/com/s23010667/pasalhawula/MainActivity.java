@@ -10,6 +10,7 @@ import android.widget.TextView; // Import TextView class
 public class MainActivity extends AppCompatActivity {
 
     private TextView txtSignup; // Declare the TextView variable
+    private TextView txtForgotPassword;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         Button btnLogin = findViewById(R.id.btnLogin);
 
         txtSignup = findViewById(R.id.txtSignup); // Initialize txtSignup
+        txtForgotPassword = findViewById(R.id.txtForgotPassword);
 
         // Set a click listener for the Login button
         btnLogin.setOnClickListener(v -> {
@@ -40,6 +42,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
 
 
+            }
+        });
+        txtForgotPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create an Intent to start ResetPasswordActivity
+                Intent intent = new Intent(MainActivity.this, ResetPasswordActivity.class);
+                startActivity(intent); // Start the new activity
             }
         });
     }
