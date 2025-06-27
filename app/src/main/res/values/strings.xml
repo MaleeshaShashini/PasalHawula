@@ -71,4 +71,15 @@
     <!--Strings for profile -->
     <string name="logout">Log Out</string>
 
+    <!--Strings for Reset password activity -->
+    <string name="reset_password_title">Reset Password</string>
+    <string name="email_icon_description">Email icon</string>
+    <string name="forgot_password_question">Forgot your password?</string>
+    <string name="reset_password_instructions">Enter your email address and we\'ll send you OTP to reset your password.</string>
+    <string name="email_label_with_star">Email *</string>
+    <string name="email_hint_example">e.g., school@email.com</string>
+    <string name="send_otp">Send OTP</string>
+
+
+
 </resources>
