@@ -18,7 +18,7 @@ public class NotificationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notification); // Set the layout for Notification Activity
 
-        bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView = findViewById(R.id.bottomNavigation);
 
         // Set Notification Icon as selected when in Notification Activity
         bottomNavigationView.setSelectedItemId(R.id.ic_bell);

@@ -5,6 +5,8 @@
     <!-- strings fr Login UI -->
     <string name="login">Login </string>
     <string name="login_password_hint">Enter password</string>
+    <string name="no_account">Don\'t have an account?</string>
+    <string name="signup_text">Sign Up</string>
 
     <!-- strings fr Bottom Navigation Bar -->
     <string name="home">Home</string>
@@ -33,6 +35,7 @@
     <string name="confirm_password_hint">Re-enter password</string>
     <string name="already_have_account">Already have an account? </string>
     <string name="already_have_account_login">Login</string>
+
 
     <!--Strings for Home page -->
 
