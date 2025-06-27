@@ -130,4 +130,37 @@
         app:cornerRadius="8dp"
         app:strokeColor="#000000" />
 
+    <LinearLayout
+        android:id="@+id/layoutRegisterPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/txtNotAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_account"
+            android:textSize="16sp"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/txtSignup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/signup_text"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/darkBlue"
+            android:layout_marginStart="4dp" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
