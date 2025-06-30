@@ -16,4 +16,6 @@
     <color name="hint_on_light_background">#616161</color>
 
     <color name="ic_launcher_background">#FFFFFF</color>
+
+    <color name="otp_box_background">#8FA6A6A6</color>
 </resources>

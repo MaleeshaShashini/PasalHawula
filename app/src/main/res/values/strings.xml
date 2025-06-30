@@ -80,6 +80,7 @@
     <string name="email_hint_example">e.g., school@email.com</string>
     <string name="send_otp">Send OTP</string>
 
-
+    <!--Strings for verify OTP activity -->
+    <string name="verify_OTP_title">Verify OTP</string>
 
 </resources>
