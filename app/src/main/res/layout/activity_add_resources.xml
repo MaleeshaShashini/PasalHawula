@@ -107,22 +107,6 @@
                     android:inputType="textCapSentences" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Category Input -->
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/inputLayoutCategory"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etCategory"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/category_hint"
-                    android:inputType="textCapSentences" />
-            </com.google.android.material.textfield.TextInputLayout>
-
             <!-- Location Input -->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/inputLayoutLocation"
