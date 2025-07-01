@@ -8,6 +8,9 @@ import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import android.view.View;
+import com.google.android.material.card.MaterialCardView; // import MaterialCardView
+
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -22,6 +25,18 @@ public class HomeActivity extends AppCompatActivity {
 
         // Set Home Icon as selected when in Home Activity
         bottomNavigationView.setSelectedItemId(R.id.ic_home);
+        MaterialCardView cardListResources = findViewById(R.id.cardListResources);
+
+        if (cardListResources != null) {
+            cardListResources.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(HomeActivity.this, AddResourcesActivity.class);
+                    startActivity(intent);
+                }
+            });
+        }
+
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override

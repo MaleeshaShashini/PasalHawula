@@ -1,3 +1,10 @@
 <resources>
 
+    <!-- Style for TabLayout text appearance -->
+    <style name="TabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/tab_unselected_text</item> <!-- default text color -->
+        <item name="textAllCaps">false</item> <!-- text එක capital අකුරු බවට හැරවීම වළක්වයි -->
+    </style>
 </resources>

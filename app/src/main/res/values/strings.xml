@@ -83,4 +83,23 @@
     <!--Strings for verify OTP activity -->
     <string name="verify_OTP_title">Verify OTP</string>
 
+    <!--Strings for add details activity -->
+    <string name="add_details_title">Add Details</string>
+    <string name="physical_tab">Physical</string>
+    <string name="digital_tab">Digital</string>
+    <string name="human_tab">Human</string>
+    <string name="resource_name_hint">Resource Name*</string>
+    <string name="category_hint">Category*</string>
+    <string name="location_hint">Location*</string>
+    <string name="description_hint">Description*</string>
+    <string name="upload_images_files_text">Upload images or files</string>
+    <string name="file_types_info">PNG, JPG, PDF up to 10MB</string>
+    <string name="take_photo_button">Take Photo</string>
+    <string name="upload_button">Upload</string>
+    <string name="main_upload_button">Upload</string>
+    <string name="home_tab">Home</string>
+    <string name="search_tab">Search</string>
+    <string name="add_tab">Add</string>
+    <string name="notifications_tab">Notifications</string>
+    <string name="profile_tab">Profile</string>
 </resources>

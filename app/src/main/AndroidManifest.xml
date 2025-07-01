@@ -20,13 +20,13 @@
             android:exported="false" />
         <activity
             android:name=".AddResourcesActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".FindResourcesActivity"
             android:exported="false" />
         <activity
             android:name=".HomeActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".OTPActivity"
             android:exported="false" />
