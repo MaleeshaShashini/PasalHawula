@@ -63,10 +63,6 @@
     <string name="chemistry_lab_approved_details">Your request for "Chemistry Lab Equipment" has been approved</string>
 
     <string name="view_request">View Requests</string>
-    <!--Strings for notification -->
-
-    <string name="back_button_description">Back</string>
-    <string name="notification_title">Notification</string>
 
     <!--Strings for profile -->
     <string name="logout">Log Out</string>
@@ -105,4 +101,8 @@
 
     <!--Strings for find resource activity -->
     <string name="find_resource_title">Find Resources</string>
+
+    <!--Strings for notification activity -->
+    <string name="notification_title">Notification</string>
+    <string name="back_button_description">Back</string>
 </resources>

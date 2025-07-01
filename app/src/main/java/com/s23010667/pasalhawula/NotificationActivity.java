@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -12,7 +14,7 @@ import com.google.android.material.navigation.NavigationBarView;
 public class NotificationActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
-
+    private ImageView imgBack;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,7 +24,16 @@ public class NotificationActivity extends AppCompatActivity {
 
         // Set Notification Icon as selected when in Notification Activity
         bottomNavigationView.setSelectedItemId(R.id.ic_bell);
+        imgBack = findViewById(R.id.imgBack);
 
+        imgBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create an Intent to start Home Activity
+                Intent intent = new Intent(NotificationActivity.this, HomeActivity.class);
+                startActivity(intent); // Start the new activity
+            }
+        });
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
