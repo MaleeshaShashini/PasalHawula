@@ -102,4 +102,7 @@
     <string name="add_tab">Add</string>
     <string name="notifications_tab">Notifications</string>
     <string name="profile_tab">Profile</string>
+
+    <!--Strings for find resource activity -->
+    <string name="find_resource_title">Find Resources</string>
 </resources>
