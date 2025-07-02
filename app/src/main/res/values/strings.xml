@@ -91,7 +91,7 @@
     <string name="upload_images_files_text">Upload images or files</string>
     <string name="file_types_info">PNG, JPG, PDF up to 10MB</string>
     <string name="take_photo_button">Take Photo</string>
-    <string name="upload_button">Upload</string>
+    <string name="upload_button">+ Upload</string>
     <string name="main_upload_button">Upload</string>
     <string name="home_tab">Home</string>
     <string name="search_tab">Search</string>
@@ -105,4 +105,13 @@
     <!--Strings for notification activity -->
     <string name="notification_title">Notification</string>
     <string name="back_button_description">Back</string>
+
+    <!--Strings for digital activity -->
+    <string name="url_hint">Access Link/URL</string>
+    <string name="upload_files_text">Upload files</string>
+    <string name="types_info"> PDF ,MP3, ZIP up to 100MB</string>
+
+    <!--Strings for digital activity -->
+    <string name="contact_hint">Contact info</string>
+    <string name="upload_text">Upload Documents/Portfolio</string>
 </resources>
