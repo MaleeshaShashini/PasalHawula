@@ -26,4 +26,5 @@
     <color name="dashed_border_gray">#B0B0B0</color>
     <color name="tab_selected_text">#3F51B5</color>
     <color name="tab_unselected_text">#808080</color>
+    <color name="colorPrimary">#6200EE</color>
 </resources>
