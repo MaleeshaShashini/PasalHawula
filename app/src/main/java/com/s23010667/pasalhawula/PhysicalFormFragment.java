@@ -38,10 +38,15 @@ public class PhysicalFormFragment extends Fragment {
     private ImageView imgUploadIcon;
     private Button btnTakePhoto;
     private Uri currentPhotoUri;// Stores the URI of the captured photo
+    private Button btnUploadFile; // Declared for the new Upload File button
+
+    // ActivityResultLaunchers for handling results from other activities
     private ActivityResultLauncher<Uri> takePictureLauncher;// For launching camera and getting picture
     private ActivityResultLauncher<Intent> mapSelectionLauncher;    // For launching map selection activity
     private ActivityResultLauncher<String[]> requestPermissionLauncher; // For requesting runtime permissions
+    private ActivityResultLauncher<String> fileSelectionLauncher; // New: For selecting files from storage
 
+    // Empty public constructor for Fragment
     public PhysicalFormFragment() {
 
     }
@@ -88,8 +93,24 @@ public class PhysicalFormFragment extends Fragment {
                 }
         );
 
+        // Register launcher for selecting files from storage
+        fileSelectionLauncher = registerForActivityResult(
+                new ActivityResultContracts.GetContent(),
+                uri -> {
+                    if (uri != null) {
+                        // If a file is selected, display it in the ImageView
+                        imgUploadIcon.setImageURI(uri);
+                        currentPhotoUri = uri; // Update currentPhotoUri to the selected file's URI
+                        Toast.makeText(getContext(), "File Selected: " + uri.getLastPathSegment(), Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getContext(), "File selection cancelled or failed.", Toast.LENGTH_SHORT).show();
+                    }
+                }
+        );
+
+        // Register launcher for requesting multiple permissions
         requestPermissionLauncher = registerForActivityResult(new ActivityResultContracts.RequestMultiplePermissions(), result -> {
-            Boolean cameraGranted = result.getOrDefault(Manifest.permission.CAMERA, false);
+            Boolean cameraGranted = result.getOrDefault(Manifest.permission.CAMERA, false);// Check Camera permission
             Boolean writeStorageGranted = result.getOrDefault(Manifest.permission.WRITE_EXTERNAL_STORAGE, false);
             Boolean readMediaImagesGranted = result.getOrDefault(Manifest.permission.READ_MEDIA_IMAGES, false); // For API 33+
 
@@ -135,6 +156,7 @@ public class PhysicalFormFragment extends Fragment {
         inputLayoutLocation = view.findViewById(R.id.inputLayoutLocation); // Get the TextInputLayout for its end icon listener
         imgUploadIcon = view.findViewById(R.id.imgUploadIcon);
         btnTakePhoto = view.findViewById(R.id.btnTakePhoto);
+        btnUploadFile = view.findViewById(R.id.btnUploadFile); // Initialize the new Upload File button
 
         // Set OnClickListener for the end icon of the Location TextInputLayout
         if (inputLayoutLocation != null) {
@@ -155,6 +177,15 @@ public class PhysicalFormFragment extends Fragment {
                 }
             } else {
                 requestCameraAndStoragePermissions();
+            }
+        });
+        // Set OnClickListener for the btnUploadFile
+        btnUploadFile.setOnClickListener(v -> {
+            // Check for read storage permissions before launching file picker
+            if (checkReadMediaImagesPermission() || checkReadExternalStoragePermission()) {
+                fileSelectionLauncher.launch("image/*"); // Launch file picker to select any image type
+            } else {
+                requestReadMediaPermissions(); // Request storage read permissions if not granted
             }
         });
 
@@ -197,6 +228,22 @@ public class PhysicalFormFragment extends Fragment {
 
     }
 
+    // New: Checks if READ_MEDIA_IMAGES permission is granted (for Android 13+)
+    private boolean checkReadMediaImagesPermission() {
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU) {
+            return ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.READ_MEDIA_IMAGES) == PackageManager.PERMISSION_GRANTED;
+        }
+        return false; // Not applicable for older Android versions
+    }
+
+    // Checks if READ_EXTERNAL_STORAGE permission is granted
+    private boolean checkReadExternalStoragePermission() {
+        if (android.os.Build.VERSION.SDK_INT <= android.os.Build.VERSION_CODES.P) {
+            return ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED;
+        }
+        return true;
+    }
+
         // Requests Camera and Storage permissions from the user
         private void requestCameraAndStoragePermissions () {
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU) {
@@ -217,5 +264,20 @@ public class PhysicalFormFragment extends Fragment {
                 });
             }
         }
+    // Requests READ_MEDIA_IMAGES or READ_EXTERNAL_STORAGE permissions from the user
+    private void requestReadMediaPermissions() {
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU) {
+            requestPermissionLauncher.launch(new String[]{
+                    Manifest.permission.READ_MEDIA_IMAGES
+            });
+        } else if (android.os.Build.VERSION.SDK_INT <= android.os.Build.VERSION_CODES.P) {
+            requestPermissionLauncher.launch(new String[]{
+                    Manifest.permission.READ_EXTERNAL_STORAGE
+            });
+        } else {
+            Toast.makeText(getContext(), "Storage access granted by system for file picker.", Toast.LENGTH_SHORT).show();
+            fileSelectionLauncher.launch("image/*"); // Launch directly if no explicit permission needed
+        }
+    }
 
 }
