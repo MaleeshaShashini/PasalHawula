@@ -4,7 +4,16 @@
     <style name="TabTextAppearance" parent="TextAppearance.Design.Tab">
         <item name="android:textSize">14sp</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/tab_unselected_text</item> <!-- default text color -->
-        <item name="textAllCaps">false</item> <!-- text එක capital අකුරු බවට හැරවීම වළක්වයි -->
+        <item name="android:textColor">@color/tab_unselected_text</item>
+        <item name="textAllCaps">false</item>
     </style>
+    <style name="CircleImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+    <style name="Divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">?android:attr/listDivider</item> </style>
+
 </resources>
