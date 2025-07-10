@@ -19,6 +19,7 @@ public class ProfileActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     private Button btnLogout; // Declare the Button variable
     private ImageView imgBack;
+    Button btnEditProfile;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,11 +32,20 @@ public class ProfileActivity extends AppCompatActivity {
         bottomNavigationView.setSelectedItemId(R.id.ic_user);
 
         imgBack = findViewById(R.id.imgBack);
+        btnEditProfile = findViewById(R.id.btnEditProfile);
         imgBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Create an Intent to start Home Activity
                 Intent intent = new Intent(ProfileActivity.this, HomeActivity.class);
+                startActivity(intent); // Start the new activity
+            }
+        });
+
+        btnEditProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ProfileActivity.this, EditProfileActivity.class);
                 startActivity(intent); // Start the new activity
             }
         });
