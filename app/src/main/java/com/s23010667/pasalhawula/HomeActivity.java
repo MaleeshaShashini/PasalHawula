@@ -25,18 +25,26 @@ public class HomeActivity extends AppCompatActivity {
 
         // Set Home Icon as selected when in Home Activity
         bottomNavigationView.setSelectedItemId(R.id.ic_home);
+        MaterialCardView cardMakeRequest = findViewById(R.id.cardMakeRequest);
         MaterialCardView cardListResources = findViewById(R.id.cardListResources);
+        MaterialCardView cardFindResources = findViewById(R.id.cardFindResources);
+        MaterialCardView cardViewRequests = findViewById(R.id.cardViewRequests);
 
-        if (cardListResources != null) {
-            cardListResources.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(HomeActivity.this, AddResourcesActivity.class);
-                    startActivity(intent);
-                }
-            });
-        }
+        cardMakeRequest.setOnClickListener(v -> {
+            startActivity(new Intent(HomeActivity.this, AddRequestActivity.class));
+        });
 
+        cardListResources.setOnClickListener(v -> {
+            startActivity(new Intent(HomeActivity.this, AddResourcesActivity.class));
+        });
+
+        cardFindResources.setOnClickListener(v -> {
+            startActivity(new Intent(HomeActivity.this, FindResourcesActivity.class));
+        });
+
+        cardViewRequests.setOnClickListener(v -> {
+            startActivity(new Intent(HomeActivity.this, ViewRequestsActivity.class));
+        });
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override

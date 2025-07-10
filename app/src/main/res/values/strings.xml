@@ -45,7 +45,7 @@
     <string name="search_resources_hint">Search for resources</string>
     <string name="school_college_name">St.Sebastian B.M.V - Kandana</string>
 
-    <string name="list_resources_action">List Resources</string>
+    <string name="list_resources_action">Add Resources</string>
     <string name="find_resources_action">Find Resources</string>
     <string name="make_request_action">Make a Request</string>
 
@@ -115,4 +115,8 @@
     <!--Strings for digital activity -->
     <string name="contact_hint">Contact info</string>
     <string name="upload_text">Upload Documents/Portfolio</string>
+
+    <!--Strings for Add Request activity -->
+    <string name="make_request">Make a Request</string>
+
 </resources>
