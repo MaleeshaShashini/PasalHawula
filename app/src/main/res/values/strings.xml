@@ -131,4 +131,12 @@
     <string name="terms_and_conditions_txt">Terms &amp; Conditions</string>
     <string name="edit_profile_btn_txt">Edit Profile</string>
 
+    <!--Strings for edit profile -->
+    <string name="edit_profile_screen_title">Edit Profile</string>
+    <string name="edit_profile_info_header">Edit Profile Information</string>
+    <string name="edit_profile_school_name_label">School Name</string>
+    <string name="edit_profile_location_label">Location</string>
+    <string name="edit_profile_phone_number_label">Phone Number</string>
+    <string name="edit_profile_email_address_label">Email Address</string>
+    <string name="edit_profile_save_changes_button">Save Changes</string>
 </resources>

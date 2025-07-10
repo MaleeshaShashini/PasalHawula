@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F0F0F0"
-    tools:context=".MainActivity">
+    tools:context=".AddRequestActivity">
 
     <!-- Header/Toolbar -->
     <LinearLayout
@@ -54,8 +54,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp">
-
-            <!-- Handshake Icon (Placeholder - you'll need to add this drawable) -->
 
             <!-- Resource Input Field -->
             <ImageView
