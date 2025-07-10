@@ -65,9 +65,6 @@
 
     <string name="view_request">View Requests</string>
 
-    <!--Strings for profile -->
-    <string name="logout">Log Out</string>
-
     <!--Strings for Reset password activity -->
     <string name="reset_password_title">Reset Password</string>
     <string name="email_icon_description">Email icon</string>
@@ -118,5 +115,20 @@
 
     <!--Strings for Add Request activity -->
     <string name="make_request">Make a Request</string>
+
+
+    <!--Strings for profile -->
+    <string name="logout">Log Out</string>
+    <string name="back_arrow_description">Back</string>
+    <string name="profile_txt">Profile</string>
+    <string name="school_logo_description">School Logo</string>
+    <string name="phone_icon_description">Phone Icon</string>
+
+    <string name="change_password_txt">Change Password</string>
+    <string name="notifications_settings_txt">Notifications Settings</string>
+    <string name="help_and_support_txt">Help &amp; Support</string>
+    <string name="privacy_policy_txt">Privacy Policy</string>
+    <string name="terms_and_conditions_txt">Terms &amp; Conditions</string>
+    <string name="edit_profile_btn_txt">Edit Profile</string>
 
 </resources>

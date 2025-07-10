@@ -8,7 +8,7 @@
     android:background="#F0F0F0"
     tools:context=".ProfileActivity">
 
-
+    <!-- Header Section with Dark Blue Background -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/topHeaderLayout"
         android:layout_width="0dp"
@@ -18,23 +18,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
+        <!-- Back Arrow Icon -->
         <ImageView
             android:id="@+id/imgBack"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:src="@drawable/ic_arrow_back"
-            android:contentDescription="Back"
+            android:contentDescription="@string/back_arrow_description"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:tint="@android:color/white" />
 
+        <!-- Profile Text -->
         <TextView
             android:id="@+id/txtProfileTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Profile"
+            android:text="@string/profile_txt"
             android:textColor="@android:color/white"
             android:textSize="24sp"
             android:textStyle="bold"
@@ -45,6 +47,7 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <!-- Profile Information Card View -->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/profileCardView"
         android:layout_width="0dp"
@@ -65,16 +68,18 @@
             android:orientation="vertical"
             android:gravity="center_horizontal">
 
+            <!-- School Logo Image (Circular) -->
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/imgSchoolLogo"
                 android:layout_width="114dp"
                 android:layout_height="113dp"
                 android:layout_marginBottom="16dp"
-                android:contentDescription="School Logo"
+                android:contentDescription="@string/school_logo_description"
                 android:scaleType="centerCrop"
                 android:src="@drawable/logo"
                 app:shapeAppearanceOverlay="@style/CircleImageView" />
 
+            <!--TextView for School Name  -->
             <TextView
                 android:id="@+id/txtSchoolName"
                 android:layout_width="wrap_content"
@@ -85,6 +90,7 @@
                 android:layout_marginBottom="4dp"
                 tools:text="School Name" />
 
+            <!--TextView for School Location  -->
             <TextView
                 android:id="@+id/txtSchoolLocation"
                 android:layout_width="wrap_content"
@@ -101,14 +107,16 @@
                 android:gravity="center_vertical"
                 android:layout_marginBottom="8dp">
 
+                <!--Phone icon -->
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:src="@drawable/ic_phone"
-                    android:contentDescription="Phone Icon"
+                    android:contentDescription="@string/phone_icon_description"
                     android:layout_marginEnd="8dp"
                     app:tint="@color/darkBlue" />
 
+                <!--TextView for Mobile No  -->
                 <TextView
                     android:id="@+id/txtPhoneNumber"
                     android:layout_width="wrap_content"
@@ -124,14 +132,16 @@
                 android:orientation="horizontal"
                 android:gravity="center_vertical">
 
+                <!--Email icon  -->
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:src="@drawable/ic_email"
-                    android:contentDescription="Email Icon"
+                    android:contentDescription="@string/email_icon_description"
                     android:layout_marginEnd="8dp"
                     app:tint="@color/darkBlue" />
 
+                <!--TextView for Email  -->
                 <TextView
                     android:id="@+id/txtEmailAddress"
                     android:layout_width="wrap_content"
@@ -165,86 +175,87 @@
 
         <!-- Change Password Option -->
         <TextView
-            android:id="@+id/tvChangePassword"
+            android:id="@+id/txtChangePassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Change Password"
+            android:text="@string/change_password_txt"
             android:textSize="18sp"
             android:textColor="@color/black"
             android:padding="16dp"
-            android:drawableEnd="@drawable/ic_arrow_forward"
-            android:drawableTint="@android:color/darker_gray"
             android:background="?attr/selectableItemBackground"
             android:clickable="true"
-            android:focusable="true" />
+            android:focusable="true"
+            app:drawableTint="@android:color/darker_gray"
+            app:drawableEndCompat="@drawable/ic_arrow_forward" />
         <View style="@style/Divider" />
 
         <!-- Notifications Settings Option -->
         <TextView
-            android:id="@+id/tvNotificationsSettings"
+            android:id="@+id/txtNotificationsSettings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Notifications Settings"
+            android:text="@string/notifications_settings_txt"
             android:textSize="18sp"
             android:textColor="@color/black"
             android:padding="16dp"
-            android:drawableEnd="@drawable/ic_arrow_forward"
-            android:drawableTint="@android:color/darker_gray"
             android:background="?attr/selectableItemBackground"
             android:clickable="true"
-            android:focusable="true" />
+            android:focusable="true"
+            app:drawableEndCompat="@drawable/ic_arrow_forward"
+            app:drawableTint="@android:color/darker_gray" />
         <View style="@style/Divider" />
 
         <!-- Help & Support Option -->
         <TextView
-            android:id="@+id/tvHelpSupport"
+            android:id="@+id/txtHelpSupport"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Help  &amp; Support"
+            android:text="@string/help_and_support_txt"
             android:textSize="18sp"
             android:textColor="@color/black"
             android:padding="16dp"
-            android:drawableEnd="@drawable/ic_arrow_forward"
-            android:drawableTint="@android:color/darker_gray"
             android:background="?attr/selectableItemBackground"
             android:clickable="true"
-            android:focusable="true" />
+            android:focusable="true"
+            app:drawableEndCompat="@drawable/ic_arrow_forward"
+            app:drawableTint="@android:color/darker_gray" />
         <View style="@style/Divider" />
 
         <!-- Privacy Policy Option -->
         <TextView
-            android:id="@+id/tvPrivacyPolicy"
+            android:id="@+id/txtPrivacyPolicy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Privacy Policy"
+            android:text="@string/privacy_policy_txt"
             android:textSize="18sp"
             android:textColor="@color/black"
             android:padding="16dp"
-            android:drawableEnd="@drawable/ic_arrow_forward"
-            android:drawableTint="@android:color/darker_gray"
             android:background="?attr/selectableItemBackground"
             android:clickable="true"
-            android:focusable="true" />
+            android:focusable="true"
+            app:drawableEndCompat="@drawable/ic_arrow_forward"
+            app:drawableTint="@android:color/darker_gray" />
         <View style="@style/Divider" />
 
         <!-- Terms & Conditions Option -->
         <TextView
-            android:id="@+id/tvTermsConditions"
+            android:id="@+id/txtTermsConditions"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Terms  &amp;  Conditions"
+            android:text="@string/terms_and_conditions_txt"
             android:textSize="18sp"
             android:textColor="@color/black"
             android:padding="16dp"
-            android:drawableEnd="@drawable/ic_arrow_forward"
-            android:drawableTint="@android:color/darker_gray"
             android:background="?attr/selectableItemBackground"
             android:clickable="true"
-            android:focusable="true" />
+            android:focusable="true"
+            app:drawableEndCompat="@drawable/ic_arrow_forward"
+            app:drawableTint="@android:color/darker_gray" />
 
     </LinearLayout>
 </ScrollView>
 
+    <!--Edit Profile Button  -->
     <Button
         android:id="@+id/btnEditProfile"
         android:layout_width="0dp"
@@ -252,7 +263,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="12dp"
-        android:text="Edit Profile"
+        android:text="@string/edit_profile_btn_txt"
         android:textSize="20sp"
         app:cornerRadius="8dp"
         android:backgroundTint="@color/darkBlue"
