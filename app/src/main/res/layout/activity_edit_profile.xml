@@ -111,7 +111,10 @@
                 android:padding="@dimen/padding_small"
                 android:textSize="@dimen/text_size_medium"
                 android:hint="@string/hint_location"
-                tools:text="Colombo, Sri Lanka" />
+                tools:text="Colombo, Sri Lanka"
+                android:drawableEnd="@drawable/ic_map_resized"
+                android:drawablePadding="8dp"
+                />
 
             <TextView
                 android:id="@+id/txtPhoneNumberLabel"
