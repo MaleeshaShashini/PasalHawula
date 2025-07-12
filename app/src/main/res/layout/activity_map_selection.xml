@@ -12,6 +12,37 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputLayoutSearchLocation"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:hint="@string/search_location_hint"
+        app:startIconDrawable="@drawable/ic_search"
+        app:endIconMode="clear_text"
+        app:boxCornerRadiusTopStart="8dp"
+        app:boxCornerRadiusTopEnd="8dp"
+        app:boxCornerRadiusBottomStart="8dp"
+        app:boxCornerRadiusBottomEnd="8dp"
+        app:boxStrokeColor="@color/primary_blue"
+        app:hintTextColor="@color/primary_blue"
+        app:endIconTint="@color/primary_blue"
+        app:startIconTint="@color/primary_blue"
+        android:background="@drawable/rounded_white_background"
+        android:elevation="4dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etSearchLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPostalAddress"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:imeOptions="actionSearch" />
+        </com.google.android.material.textfield.TextInputLayout>
+
     <Button
         android:id="@+id/btnSelectLocation"
         android:layout_width="wrap_content"

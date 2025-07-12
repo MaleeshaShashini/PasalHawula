@@ -148,4 +148,8 @@
     <string name="hint_phone_number">Edit phone number</string>
     <string name="hint_email_address">Edit email address</string>
 
+    <!-- Search Location Input Field Hint Text  -->
+    <string name="search_location_hint">Search Location</string>
+
+
 </resources>
