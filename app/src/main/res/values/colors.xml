@@ -27,4 +27,9 @@
     <color name="tab_selected_text">#3F51B5</color>
     <color name="tab_unselected_text">#808080</color>
     <color name="colorPrimary">#6200EE</color>
+    <color name="background_light_gray">#F0F0F0</color>
+    <color name="brand_blue">#3F51B5</color>
+    <color name="dark_blue_custom">#00008B</color>
+    <color name="text_color_black">#000000</color>
+    <color name="text_color_gray">@android:color/darker_gray</color>
 </resources>

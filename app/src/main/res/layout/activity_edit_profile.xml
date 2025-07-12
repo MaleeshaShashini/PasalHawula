@@ -1,49 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:background="#F0F0F0"
-tools:context=".EditProfileActivity">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light_gray"
+    tools:context=".EditProfileActivity">
 
-    <!-- Back Arrow -->
     <ImageView
         android:id="@+id/imgBack"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
+        android:layout_width="@dimen/icon_size_medium"
+        android:layout_height="@dimen/icon_size_medium"
         android:src="@drawable/ic_arrow_back"
         android:contentDescription="@string/back_arrow_description"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_medium"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
-    <!-- Screen Title -->
     <TextView
         android:id="@+id/txtScreenTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/edit_profile_screen_title"
-        android:textSize="24sp"
+        android:textSize="@dimen/text_size_header"
         android:textStyle="bold"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="@dimen/margin_medium"
         app:layout_constraintStart_toEndOf="@+id/imgBack"
         app:layout_constraintTop_toTopOf="@+id/imgBack"
         app:layout_constraintBottom_toBottomOf="@+id/imgBack" />
 
-    <!-- Edit Profile Information Card View -->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/profileInfoCardView"
-        android:layout_width="368dp"
-        android:layout_height="537dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="24dp"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="8dp"
-        app:contentPadding="16dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_large"
+        android:layout_marginTop="@dimen/margin_top_card"
+        android:layout_marginEnd="@dimen/margin_large"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        app:cardElevation="@dimen/card_elevation"
+        app:contentPadding="@dimen/card_content_padding"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -52,21 +49,19 @@ tools:context=".EditProfileActivity">
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingTop="@dimen/padding_vertical_form_content"
+            android:paddingBottom="@dimen/padding_vertical_form_content">
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/imgProfile"
-                android:layout_width="125dp"
-                android:layout_height="120dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="14dp"
-                android:contentDescription="@string/school_logo_description"
+                android:layout_width="@dimen/profile_image_size"
+                android:layout_height="@dimen/profile_image_size"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_marginBottom="@dimen/margin_small_plus"
+                android:contentDescription="@string/profile_picture_description"
                 android:scaleType="centerCrop"
                 android:src="@drawable/logo"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
                 app:shapeAppearanceOverlay="@style/CircleImageView" />
 
             <TextView
@@ -74,96 +69,88 @@ tools:context=".EditProfileActivity">
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/edit_profile_picture_text"
-                android:textSize="14sp"
-                android:layout_marginBottom="18dp"
-                android:drawablePadding="4dp"
-                app:tint="@color/darkBlue"
-                app:layout_constraintTop_toBottomOf="@+id/imgProfileOrSchoolLogo"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                android:textSize="@dimen/text_size_small"
+                android:layout_marginBottom="@dimen/margin_large_plus"
+                android:drawablePadding="@dimen/padding_tiny"
+                app:tint="@color/dark_blue_custom" />
 
             <TextView
-                android:id="@+id/txtSchoolName"
+                android:id="@+id/txtSchoolNameLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="@dimen/margin_small"
                 android:text="@string/edit_profile_school_name_label"
-                android:textColor="@android:color/darker_gray"
-                android:textSize="14sp"
-                android:visibility="gone"
-                tools:visibility="visible" />
+                android:textColor="@color/text_color_gray"
+                android:textSize="@dimen/text_size_small" />
 
             <EditText
                 android:id="@+id/editSchoolName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textCapWords"
-                android:padding="8dp"
-                android:textColor="@color/black"
-                android:textSize="14sp"
+                android:padding="@dimen/padding_small"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/text_size_medium"
+                android:hint="@string/hint_school_name"
                 tools:text="Central College" />
 
             <TextView
-                android:id="@+id/txtLocation"
+                android:id="@+id/txtLocationLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="@dimen/margin_small"
                 android:text="@string/edit_profile_location_label"
-                android:textColor="@android:color/darker_gray"
-                android:textSize="14sp"
-                android:visibility="gone"
-                tools:visibility="visible" />
+                android:textColor="@color/text_color_gray"
+                android:textSize="@dimen/text_size_small"/>
 
             <EditText
-                android:id="@+id/editSchool"
+                android:id="@+id/editLocation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textCapWords"
-                android:padding="8dp"
-                android:textSize="14sp"
+                android:padding="@dimen/padding_small"
+                android:textSize="@dimen/text_size_medium"
+                android:hint="@string/hint_location"
                 tools:text="Colombo, Sri Lanka" />
 
             <TextView
-                android:id="@+id/txtPhoneNumber"
+                android:id="@+id/txtPhoneNumberLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="@dimen/margin_small"
                 android:text="@string/edit_profile_phone_number_label"
-                android:textColor="@android:color/darker_gray"
-                android:textSize="14sp"
-                android:visibility="gone"
-                tools:visibility="visible" />
+                android:textColor="@color/text_color_gray"
+                android:textSize="@dimen/text_size_small"/>
 
             <EditText
                 android:id="@+id/editPhoneNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="phone"
-                android:padding="8dp"
-                android:textColor="@color/black"
-                android:textSize="16sp"
+                android:padding="@dimen/padding_small"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/text_size_medium"
+                android:hint="@string/hint_phone_number"
                 tools:text="+94 11 2345678" />
 
             <TextView
-                android:id="@+id/txtEmailAddress"
+                android:id="@+id/txtEmailAddressLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="@dimen/margin_small"
                 android:text="@string/edit_profile_email_address_label"
-                android:textColor="@android:color/darker_gray"
-                android:textSize="14sp"
-                android:visibility="gone"
-                tools:visibility="visible" />
+                android:textColor="@color/text_color_gray"
+                android:textSize="@dimen/text_size_small" />
 
             <EditText
                 android:id="@+id/editEmailAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
-                android:padding="8dp"
-                android:textColor="@color/black"
-                android:textSize="16sp"
+                android:padding="@dimen/padding_small"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/text_size_medium"
+                android:hint="@string/hint_email_address"
                 tools:text="info@central-college.lk" />
 
         </LinearLayout>
@@ -171,18 +158,19 @@ tools:context=".EditProfileActivity">
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnSaveChanges"
-        android:layout_width="344dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="#3F51B5"
-        android:paddingVertical="12dp"
+        android:layout_marginTop="@dimen/margin_xlarge"
+        android:layout_marginBottom="@dimen/margin_medium"
+        android:layout_marginStart="@dimen/margin_large"
+        android:layout_marginEnd="@dimen/margin_large"
+        android:backgroundTint="@color/brand_blue"
+        android:paddingVertical="@dimen/button_padding_vertical"
         android:text="@string/edit_profile_save_changes_button"
         android:textColor="@android:color/white"
-        app:cornerRadius="8dp"
+        app:cornerRadius="@dimen/button_corner_radius"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/profileInfoCardView"
         app:layout_constraintVertical_bias="0.0" />

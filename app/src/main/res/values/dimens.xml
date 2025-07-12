@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_size_header">24sp</dimen>
+    <dimen name="text_size_medium">16sp</dimen>
+    <dimen name="text_size_small">14sp</dimen>
+
+    <dimen name="margin_tiny">4dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_small_plus">14dp</dimen>
+    <dimen name="margin_medium">16dp</dimen>
+    <dimen name="margin_large">24dp</dimen>
+    <dimen name="margin_large_plus">18dp</dimen>
+    <dimen name="margin_xlarge">32dp</dimen>
+    <dimen name="margin_top_card">80dp</dimen>
+
+    <dimen name="padding_tiny">4dp</dimen>
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="button_padding_vertical">12dp</dimen>
+    <dimen name="padding_vertical_form_content">16dp</dimen>
+
+    <dimen name="icon_size_medium">32dp</dimen>
+    <dimen name="profile_image_size">120dp</dimen>
+
+    <dimen name="card_corner_radius">16dp</dimen>
+    <dimen name="card_elevation">8dp</dimen>
+    <dimen name="card_content_padding">16dp</dimen>
+
+    <dimen name="button_corner_radius">8dp</dimen>
+
+</resources>
