@@ -48,9 +48,6 @@
             android:name=".HumanActivity"
             android:exported="false" />
         <activity
-            android:name=".DigitalActivity"
-            android:exported="false" />
-        <activity
             android:name=".ProfileActivity"
             android:exported="false" />
         <activity
@@ -103,6 +100,9 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/API_KEY" />
+        <meta-data
+            android:name="com.google.android.libraries.places.api.KEY"
+            android:value="YOUR_API_KEY"/>
     </application>
 
 </manifest>

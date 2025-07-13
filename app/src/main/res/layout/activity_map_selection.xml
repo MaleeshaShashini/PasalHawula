@@ -34,7 +34,7 @@
         android:elevation="4dp">
 
             <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etSearchLocation"
+            android:id="@+id/editSearchLocation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPostalAddress"

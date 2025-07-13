@@ -39,8 +39,11 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.2.1")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
-    implementation ("androidx.viewpager2:viewpager2:1.0.0")
+    implementation ("androidx.viewpager2:viewpager2:1.1.0")
     implementation ("androidx.fragment:fragment:1.8.8")
+    implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.9.1")
+    implementation ("androidx.startup:startup-runtime:1.2.0")
     implementation ("com.google.android.gms:play-services-maps:19.2.0")
     implementation ("com.google.android.gms:play-services-location:21.3.0")
+    implementation ("com.google.android.libraries.places:places:4.3.1")
 }
