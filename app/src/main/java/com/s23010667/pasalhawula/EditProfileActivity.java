@@ -8,12 +8,10 @@ import android.view.View;
 import android.widget.ImageView;
 
 import android.widget.EditText; // for EditText
-import android.widget.ImageView;
 import android.widget.Toast; //  for Toast messages
 import com.google.android.material.button.MaterialButton; //for MaterialButton
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.annotation.Nullable;
 
 
 public class EditProfileActivity extends AppCompatActivity {
