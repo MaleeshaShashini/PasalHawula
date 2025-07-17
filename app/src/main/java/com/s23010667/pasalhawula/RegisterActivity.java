@@ -11,6 +11,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private TextView txtAlreadyHaveAccountLogin;
     private Button registerButton;
+    DatabaseHelper myDb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,6 +20,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         registerButton = findViewById(R.id.btnRegister);
         txtAlreadyHaveAccountLogin = findViewById(R.id.txtAlreadyHaveAccountLogin);
+        myDb = new DatabaseHelper(this);
 
         registerButton.setOnClickListener(v -> {
             Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
