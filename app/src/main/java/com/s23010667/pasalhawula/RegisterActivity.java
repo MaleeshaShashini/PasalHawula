@@ -15,11 +15,11 @@ public class RegisterActivity extends AppCompatActivity {
     private Button registerButton;
     DatabaseHelper myDb;
     EditText editSchoolName, editContactPerson, editEmail, editPhone, editPassword, editPasswordConfirm;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
 
         registerButton = findViewById(R.id.btnRegister);
         txtAlreadyHaveAccountLogin = findViewById(R.id.txtAlreadyHaveAccountLogin);
@@ -32,12 +32,6 @@ public class RegisterActivity extends AppCompatActivity {
         editPassword = findViewById(R.id.editPassword);
         editPasswordConfirm = findViewById(R.id.editPasswordConfirm);
 
-        registerButton.setOnClickListener(v -> {
-            Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
-            startActivity(intent);
-            finish();
-        });
-
         //Navigation to login page
         txtAlreadyHaveAccountLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,28 +42,32 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
-        addData();
-    }
+        // Register button action
+        registerButton.setOnClickListener(v -> {
+            String schoolName = editSchoolName.getText().toString().trim();
+            String contactPerson = editContactPerson.getText().toString().trim();
+            String email = editEmail.getText().toString().trim();
+            String phone = editPhone.getText().toString().trim();
+            String password = editPassword.getText().toString();
+            String confirmPassword = editPasswordConfirm.getText().toString();
 
-    public void addData(){
-        registerButton.setOnClickListener(new View.OnClickListener(){
+            boolean isDataInserted= myDb.insertData(
+                    editSchoolName.getText().toString(),
+                    editContactPerson.getText().toString(),
+                    editEmail.getText().toString(),
+                    editPhone.getText().toString(),
+                    editPassword.getText().toString(),
+                    editPasswordConfirm.getText().toString()
+            );
+            if(isDataInserted == true) {
+                Toast.makeText(RegisterActivity.this, "Data is inserted properly", Toast.LENGTH_LONG).show();
 
-            @Override
-            public void onClick(View view) {
-                myDb.insertData(editSchoolName.getText().toString(), editContactPerson.getText().toString(), editEmail.getText().toString(), editPhone.getText().toString(), editPassword.getText().toString(), editPasswordConfirm.getText().toString());
-                boolean isDataInserted= myDb.insertData(
-                        editSchoolName.getText().toString(),
-                        editContactPerson.getText().toString(),
-                        editEmail.getText().toString(),
-                        editPhone.getText().toString(),
-                        editPassword.getText().toString(),
-                        editPasswordConfirm.getText().toString()
-                );
-                if(isDataInserted == true)
-                    Toast.makeText(RegisterActivity.this, "Data is inserted properly", Toast.LENGTH_LONG).show();
-                else
-                    Toast.makeText(RegisterActivity.this, "Data is not inserted properly", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
 
+            }else {
+                Toast.makeText(RegisterActivity.this, "Data is not inserted properly", Toast.LENGTH_LONG).show();
             }
         });
     }
