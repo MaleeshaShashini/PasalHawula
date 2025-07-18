@@ -59,15 +59,47 @@ public class RegisterActivity extends AppCompatActivity {
                     editPassword.getText().toString(),
                     editPasswordConfirm.getText().toString()
             );
+
+            // Check for empty fields
+            if(schoolName.isEmpty() || contactPerson.isEmpty() || email.isEmpty() || phone.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
+                Toast.makeText(RegisterActivity.this, "All fields are required.", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            // Validate email format
+            if(!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                Toast.makeText(RegisterActivity.this, "Invalid email address.", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            // Validate phone number
+            if(!phone.matches("\\d{10}")) {
+                Toast.makeText(RegisterActivity.this, "Enter valid 10-digit mobile no.", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            // heck if passwords match
+            if(!password.equals(confirmPassword)) {
+                Toast.makeText(RegisterActivity.this, "Password and Confirm Password do not match.", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            // Password length check
+            if(password.length() < 6) {
+                Toast.makeText(RegisterActivity.this, "Password too short! Minimum 6 characters required.", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            // Insert data into database
             if(isDataInserted == true) {
-                Toast.makeText(RegisterActivity.this, "Data is inserted properly", Toast.LENGTH_LONG).show();
+                Toast.makeText(RegisterActivity.this, "You’ve successfully registered.", Toast.LENGTH_LONG).show();
 
                 Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
 
             }else {
-                Toast.makeText(RegisterActivity.this, "Data is not inserted properly", Toast.LENGTH_LONG).show();
+                Toast.makeText(RegisterActivity.this, "Something went wrong. Please try again ", Toast.LENGTH_LONG).show();
             }
         });
     }
