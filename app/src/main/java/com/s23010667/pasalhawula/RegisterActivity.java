@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -56,6 +57,19 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 myDb.insertData(editSchoolName.getText().toString(), editContactPerson.getText().toString(), editEmail.getText().toString(), editPhone.getText().toString(), editPassword.getText().toString(), editPasswordConfirm.getText().toString());
+                boolean isDataInserted= myDb.insertData(
+                        editSchoolName.getText().toString(),
+                        editContactPerson.getText().toString(),
+                        editEmail.getText().toString(),
+                        editPhone.getText().toString(),
+                        editPassword.getText().toString(),
+                        editPasswordConfirm.getText().toString()
+                );
+                if(isDataInserted == true)
+                    Toast.makeText(RegisterActivity.this, "Data is inserted properly", Toast.LENGTH_LONG).show();
+                else
+                    Toast.makeText(RegisterActivity.this, "Data is not inserted properly", Toast.LENGTH_LONG).show();
+
             }
         });
     }
