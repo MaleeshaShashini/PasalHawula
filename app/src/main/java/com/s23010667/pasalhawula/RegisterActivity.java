@@ -46,6 +46,18 @@ public class RegisterActivity extends AppCompatActivity {
                 finish();
             }
         });
-            }
+
+        addData();
     }
+
+    public void addData(){
+        registerButton.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                myDb.insertData(editSchoolName.getText().toString(), editContactPerson.getText().toString(), editEmail.getText().toString(), editPhone.getText().toString(), editPassword.getText().toString(), editPasswordConfirm.getText().toString());
+            }
+        });
+    }
+}
 
