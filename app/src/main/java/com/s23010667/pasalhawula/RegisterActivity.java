@@ -51,15 +51,6 @@ public class RegisterActivity extends AppCompatActivity {
             String password = editPassword.getText().toString();
             String confirmPassword = editPasswordConfirm.getText().toString();
 
-            boolean isDataInserted= myDb.insertData(
-                    editSchoolName.getText().toString(),
-                    editContactPerson.getText().toString(),
-                    editEmail.getText().toString(),
-                    editPhone.getText().toString(),
-                    editPassword.getText().toString(),
-                    editPasswordConfirm.getText().toString()
-            );
-
             // Check for empty fields
             if(schoolName.isEmpty() || contactPerson.isEmpty() || email.isEmpty() || phone.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
                 Toast.makeText(RegisterActivity.this, "All fields are required.", Toast.LENGTH_SHORT).show();
@@ -89,6 +80,15 @@ public class RegisterActivity extends AppCompatActivity {
                 Toast.makeText(RegisterActivity.this, "Password too short! Minimum 6 characters required.", Toast.LENGTH_SHORT).show();
                 return;
             }
+
+            boolean isDataInserted= myDb.insertData(
+                    editSchoolName.getText().toString(),
+                    editContactPerson.getText().toString(),
+                    editEmail.getText().toString(),
+                    editPhone.getText().toString(),
+                    editPassword.getText().toString(),
+                    editPasswordConfirm.getText().toString()
+            );
 
             // Insert data into database
             if(isDataInserted == true) {
