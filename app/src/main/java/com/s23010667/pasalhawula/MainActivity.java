@@ -6,11 +6,14 @@ import android.widget.Button;
 import android.content.Intent;
 import android.view.View; // Import View class for OnClickListener
 import android.widget.TextView; // Import TextView class
+import android.widget.Toast;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
     private TextView txtSignup; // Declare the TextView variable
     private TextView txtForgotPassword;
+    private DatabaseHelper myDb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,14 +25,25 @@ public class MainActivity extends AppCompatActivity {
         txtSignup = findViewById(R.id.txtSignup); // Initialize txtSignup
         txtForgotPassword = findViewById(R.id.txtForgotPassword);
 
+        EditText editEmail = findViewById(R.id.editEmail);
+        EditText editPassword = findViewById(R.id.editPassword);
+        myDb = new DatabaseHelper(this);
+
         // Set a click listener for the Login button
         btnLogin.setOnClickListener(v -> {
-            // Create an Intent to open HomeActivity
-            Intent intent = new Intent(MainActivity.this, HomeActivity.class);
-            // Start HomeActivity
-            startActivity(intent);
-            // Close the MainActivity so the user can't return to it
-            finish();
+            String email = editEmail.getText().toString().trim();
+            String password = editPassword.getText().toString();
+
+            if (email.isEmpty() || password.isEmpty()) {
+                Toast.makeText(MainActivity.this, "Please enter email and password.", Toast.LENGTH_SHORT).show();
+            } else if (myDb.checkUser(email, password)) {
+                Toast.makeText(MainActivity.this, "Login successful!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                startActivity(intent);
+                finish();
+            } else {
+                Toast.makeText(MainActivity.this, "Invalid email or password.", Toast.LENGTH_SHORT).show();
+            }
         });
 
         // Set a click listener for the "Sign Up" TextView
