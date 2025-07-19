@@ -50,4 +50,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         else
             return true;
     }
+
+    // Check if a user exists in the database with the given email and password
+    public boolean checkUser(String email, String password) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT * FROM " + TABLE_NAME + " WHERE Email=? AND Password=?";
+        String[] selectionArgs = {email, password};
+
+        return db.rawQuery(query, selectionArgs).getCount() > 0;
+    }
+
 }
